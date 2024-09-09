@@ -1,12 +1,12 @@
 const topics = {};
-
+const jwt = require("jsonwebtoken");
 module.exports = (io) => {
   io.use((socket, next) => {
-    console.log("Reached");
     const token = socket.handshake.auth.token;
     if (token) {
       try {
         const user = jwt.verify(token, process.env.JWT_SECRET);
+
         socket.user = user; // Attach user data to socket
         next();
       } catch (err) {
@@ -15,7 +15,6 @@ module.exports = (io) => {
     } else {
       next(new Error("Authentication error"));
     }
-    next();
   });
 
   // Handle socket connection
