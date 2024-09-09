@@ -19,7 +19,8 @@ This project implements a backend API for user authentication, file upload manag
 4. The application is running on the AWS instance, accessible via the base URL:
    http://3.109.13.175/
 
-Authentication API Routes
+### **Authentication API Routes**
+
 
 POST /auth/register
 Description: Register a new user.
@@ -48,7 +49,9 @@ Request Body:
 }
 
 
-File CRUD API Routes
+
+### **File CRUD API Routess**
+
 
 POST /files
 Description: Uploads a new file.
@@ -107,6 +110,8 @@ Response:
 }
 
 
-Socket Pub/Sub
+
+### **Socket Pub/Subs**
+
 
 Go to the root URL and interact with the socket-based pub/sub functionality.
