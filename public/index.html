@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Pub/Sub Testing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #messages {
+        height: 200px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .input-container {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Socket.IO Pub/Sub Testing</h1>
+
+    <label for="token">JWT Token:</label>
+    <input
+      type="text"
+      id="token"
+      placeholder="Enter your JWT token"
+      style="width: 300px"
+    />
+
+    <div class="input-container">
+      <label for="topic">Topic to Subscribe:</label>
+      <input
+        type="text"
+        id="topic"
+        placeholder="Enter topic"
+        style="width: 200px"
+      />
+      <button onclick="subscribeToTopic()">Subscribe</button>
+    </div>
+
+    <div class="input-container">
+      <label for="publish-topic">Topic to Publish:</label>
+      <input
+        type="text"
+        id="publish-topic"
+        placeholder="Enter topic"
+        style="width: 200px"
+      />
+      <label for="message">Message:</label>
+      <input
+        type="text"
+        id="message"
+        placeholder="Enter message"
+        style="width: 200px"
+      />
+      <button onclick="publishMessage()">Publish</button>
+    </div>
+
+    <h3>Messages:</h3>
+    <div id="messages"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
